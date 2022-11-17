@@ -19,11 +19,8 @@ const SearchResults = props => (
         </tr>
       </thead>
       <tbody>
-        {props.results.map(info => (
-          <tr>
-            {console.log(
-              moment(info.checkOutDate).diff(moment(info.checkInDate), "days")
-            )}
+        {props.results.map((info, i) => (
+          <tr key={i}>
             <td>{info.id}</td>
             <td>{info.title}</td>
             <td>{info.firstName}</td>
